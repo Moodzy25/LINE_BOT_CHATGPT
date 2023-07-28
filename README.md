@@ -49,4 +49,4 @@ The ask_chatgpt function sends a user’s message to the OpenAI API and generate
 The handling_message function is called whenever a user sends a message to the bot. It extracts the message from the event object, passes it to the ask_chatgpt function to generate a response, and then sends that response back to the user via LINE.
 
 Step 5: Deploy your bot
-This serverless.yml file is used to configure and deploy the Lambda function to AWS using the Serverless Framework.
+This serverless.yml file is used to configure and deploy the Lambda function to AWS using the Serverless Framework. (see folder)
