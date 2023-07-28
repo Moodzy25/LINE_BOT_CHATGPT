@@ -50,3 +50,31 @@ The handling_message function is called whenever a user sends a message to the b
 
 Step 5: Deploy your bot
 This serverless.yml file is used to configure and deploy the Lambda function to AWS using the Serverless Framework. (see folder)
+________________________________________________________________________________________________________________________________________________
+service: specifies the name of the service. In this case, it is chatgpt-line-bot-serverless.
+frameworkVersion: specifies the version of the Serverless Framework to be used.
+custom: specifies any custom variables that are used in the file. In this case, it is reading the values from the .env.yml file.
+provider: specifies the name of the cloud provider and the runtime version. It also defines the environment variables to be used by the function.
+functions: specifies the function name, handler, timeout, and events. In this case, the function name is LineBot, the handler is main.lambda_handler, the timeout is set to 30 seconds, and the function is triggered by an HTTP POST request to the /webhook path.
+plugins: specifies the plugins used by the Serverless Framework. In this case, it is using the serverless-python-requirements plugin to manage the Python dependencies.
+Now, you can use the serverless framework to deploy your bot to AWS Lambda. You can do this by running the serverless deploy command from the command line.
+
+After that, you’ll see something like this : 
+
+Deploying chatgpt-line-bot-serverless to stage dev (us-east-1)
+
+✔ Service deployed to stack chatgpt-line-bot-serverless-dev (78s)
+
+endpoint: POST - https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/webhook
+functions:
+  LineBot: chatgpt-line-bot-serverless-LineBot (3.5 MB)
+
+Improve API performance – monitor it with the Serverless Console: run "serverless --console"
+
+
+Put this URL into Webhook URL on LINE Developers Platform.
+
+That’s it! Your ChatGPT bot should now be up and running on LINE, ready to answer users' questions and provide helpful responses.
+
+Author’s Note
+This tutorial was written by ChatGPT.
