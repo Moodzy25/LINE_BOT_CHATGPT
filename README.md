@@ -40,4 +40,13 @@ This will install the plugin that manages your Python dependencies.
 Step 4: Write the Code
 Create a file named main.py in the chatgpt-line-bot-serverless directory.
 
-This code creates a Lambda function that uses OpenAI’s GPT-3 model to generate responses to user messages. The code also handles LINE webhook events.
+This code creates a Lambda function that uses OpenAI’s GPT-3 model to generate responses to user messages. The code also handles LINE webhook events. (YOU CAN SEE IN FOLDER main.py)
+
+____________________________________________________________________________________________________________________________________________
+The code starts by importing the necessary modules and setting up some global variables, including the LINE and OpenAI API credentials and a conversation history.
+The lambda_handler function is the main entry point for the serverless function. It listens for incoming HTTP requests from LINE and passes them on to the handler object, which is responsible for processing LINE events.
+The ask_chatgpt function sends a user’s message to the OpenAI API and generates a response. It then appends the user’s message and the response to the conversation history.
+The handling_message function is called whenever a user sends a message to the bot. It extracts the message from the event object, passes it to the ask_chatgpt function to generate a response, and then sends that response back to the user via LINE.
+
+Step 5: Deploy your bot
+This serverless.yml file is used to configure and deploy the Lambda function to AWS using the Serverless Framework.
